@@ -43,6 +43,11 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Users {
+  id    Int    @id @default(autoincrement())
+  name  String
+}
 ```
 Make sure to replace the `DATABASE_URL` with the actual connection string to your database. You can also configure this in the `.env` file.
 
