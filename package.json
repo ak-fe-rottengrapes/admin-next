@@ -1,6 +1,6 @@
 {
   "name": "admin-next",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Admin panel for Next.js, Prisma, and PostgreSQL",
   "main": "src/index.js",
   "scripts": {
