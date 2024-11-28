@@ -31,7 +31,40 @@ npx prisma init
 ```
 This will create a prisma folder with a schema.prisma file.
 
-#####  3. Configure your database in prisma/schema.prisma by updating the datasource block with your database connection string.
+#####  3. Configure your database in `prisma/schema.prisma:`
+
+Open the `schema.prisma` file and update the `datasource` block with your database connection string. Here's an example for a PostgreSQL database:
+```prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+```
+Make sure to replace the `DATABASE_URL` with the actual connection string to your database. You can also configure this in the `.env` file.
+
+For example, for PostgreSQL:
+```bash
+DATABASE_URL="postgresql://username:password@localhost:5432/database_name?schema=public"
+```
+##### 4. Run Prisma Migrate:
+Once your schema is set up, run Prisma Migrate to create the database tables based on your schema.
+
+```bash
+npx prisma migrate dev --name init
+```
+This will create the tables in your database.
+
+##### 5. Generate Prisma Client:
+After migrating, run the following command to generate the Prisma Client:
+
+```bash
+npx prisma generate
+```
+This will generate the Prisma Client that will be used to interact with your database in the code.
 
 ### 3. Install admin-next Package
 ```bash
