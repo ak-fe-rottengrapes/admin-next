@@ -113,3 +113,49 @@ Your Next.js application is now set up to use the admin-next package to manage y
 - **handlePost**: Handle POST requests to create new records.
 - **handleUpdate**: Handle PATCH requests to update existing records.
 - **handleDelete**: Handle DELETE requests to remove records.
+
+# Admin API Documentation
+
+This API allows CRUD operations on dynamic models, such as `users`, by specifying the `modelName` query parameter. The following sections explain the available actions and how to use them with Postman.
+
+## Base URL
+
+
+## Available Endpoints
+
+### 1. GET all table names
+
+```bash
+http://localhost:3000/api/admin
+```
+
+### 2. **GET `/api/admin?modelName={modelName}`**
+This endpoint fetches a list of records for a specified model.
+
+#### Example:
+To get all users:
+``` bash
+GET http://localhost:3000/api/admin?modelName=users
+```
+
+### 3. **GET `/api/admin?modelName={modelName}&id={id}`**
+This endpoint fetches a single record based on the model and ID.
+
+#### Example:
+To get a user with ID `2`:
+
+```bash
+GET http://localhost:3000/api/admin?modelName=users&id=2
+```
+### 4. You can perform all crud operations with given url
+
+```bash
+http://localhost:3000/api/admin?modelName=users
+```
+
+```bash
+http://localhost:3000/api/admin?modelName=users&id=2
+```
+Here just change method and pass body if needed
+
+

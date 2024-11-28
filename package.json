@@ -1,7 +1,7 @@
 {
   "name": "admin-next",
-  "version": "1.0.1",
-  "description": "Admin panel for Next.js, Prisma, and PostgreSQL",
+  "version": "1.0.2",
+  "description": "Admin panel for Next.js and Prisma",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
